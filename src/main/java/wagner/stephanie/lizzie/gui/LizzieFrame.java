@@ -79,16 +79,19 @@ public class LizzieFrame extends JFrame {
     public boolean playerIsBlack = true;
 
     // Get the font name in current system locale
-    private String systemDefaultFontName = new JLabel().getFont().getFontName();
+    private static String systemDefaultFontName = new JLabel().getFont().getFontName();
 
     static {
         // load fonts
-        try {
-            OpenSansRegularBase = Font.createFont(Font.TRUETYPE_FONT, Thread.currentThread().getContextClassLoader().getResourceAsStream("fonts/OpenSans-Regular.ttf"));
-            OpenSansSemiboldBase = Font.createFont(Font.TRUETYPE_FONT, Thread.currentThread().getContextClassLoader().getResourceAsStream("fonts/OpenSans-Semibold.ttf"));
-        } catch (IOException | FontFormatException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            OpenSansRegularBase = Font.createFont(Font.TRUETYPE_FONT, Thread.currentThread().getContextClassLoader().getResourceAsStream("fonts/OpenSans-Regular.ttf"));
+//            OpenSansSemiboldBase = Font.createFont(Font.TRUETYPE_FONT, Thread.currentThread().getContextClassLoader().getResourceAsStream("fonts/OpenSans-Semibold.ttf"));
+//        } catch (IOException | FontFormatException e) {
+//            e.printStackTrace();
+//        }
+
+        OpenSansRegularBase = new Font(systemDefaultFontName, Font.PLAIN, 20);
+        OpenSansSemiboldBase = new Font(systemDefaultFontName, Font.BOLD, 20);
     }
 
     /**
